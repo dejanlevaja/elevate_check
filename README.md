@@ -1,4 +1,5 @@
 This tool automates the discovery of "allowElevate"==True in exe file manifests. It's usually used in priviledge escalation scenarios. 
+
 For more detailed info read:  [Bypassing Windows User Account Control (UAC) and ways of mitigation](https://www.greyhathacker.net/?p=796) 
 
     
