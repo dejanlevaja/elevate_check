@@ -10,6 +10,7 @@ from fnmatch import fnmatch
 
 
 # READ https://www.greyhathacker.net/?p=796
+
 __author__ = 'Dejan Levaja'
 __email__ = 'dejan[@]levaja.com'
 __license__ = 'GPLv2'
@@ -17,6 +18,7 @@ __version__ = "1.1.0"
 
 ver = platform.platform()
 table = []
+
 
 def list_all_files(root, pattern, recursive):
     allfiles = []
@@ -31,10 +33,8 @@ def list_all_files(root, pattern, recursive):
 
     return allfiles
 
-def get_data(manifest, fname, ignore_ms):
-    # print '\nFILENAME: %s' % fname
-    # print 'MANIFEST: """%s"""' % manifest
 
+def get_data(manifest, fname, ignore_ms):
     if manifest:
         soup = BS(manifest)
         elevator = soup.find('autoelevate')
@@ -54,6 +54,7 @@ def get_data(manifest, fname, ignore_ms):
                             if not ignore_ms:
                                 text = "%s,%s,%s" % (fname, description, manufacturer)
                                 table.append(text.split(','))
+
 
 def get_manifest(fname):
     pe = pefile.PE(fname)
@@ -83,22 +84,14 @@ if __name__ == '__main__':
     ignore_ms = args['ignore_ms']
 
     print '\nPlease wait, it can take some time...'
-
-
     filenames = list_all_files(directory, "*.exe", recursive)
-
-    #filenames = ['C:\Windows\System32\wusa.exe']
     total = len(filenames)
-
 
     # progress
     for i, filename in enumerate(filenames):
         print '[%s of %s] Processing file "%s"' % (i+1, total, filename)
         manifest = get_manifest(filename)
         get_data(manifest, filename, ignore_ms)
-
-
-
 
     # print table
     print '\n\n[!] Total found: %d' % len(table)
