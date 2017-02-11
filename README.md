@@ -22,8 +22,11 @@ usage: elevate_check.py [-h] [-d DIRECTORY] [-r] [-i]
 
 optional arguments:
   -h, show this help message and exit
+  
   -d DIRECTORY      Target directory.
+  
   -r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Scan subfolders as fell.
+  
   -i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ignore files manufactured by Microsoft.
 
 ### Output
